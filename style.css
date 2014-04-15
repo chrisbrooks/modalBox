@@ -1,0 +1,91 @@
+/*
+ * Jquery modalBox Plugin
+ * 
+ * Author: Chris Brooks
+ * URL: http://www.chris-brooks.co.uk
+ * 
+ */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    font-family: sans-serif;
+}
+
+.modalBoxOne, .modalBoxTwo, .modalBoxThree{
+	width:100%;
+	height:100px;
+	display: block;
+	background:#999;
+	margin-bottom:20px;
+	text-align: center;
+	line-height: 100px;
+	color:#fff;
+
+}
+
+.modalBoxDynamic, .modalBoxStatic{
+position: absolute;
+top: 0px;
+left: 0px;
+background-color: rgba(0, 0, 0, 0.8);
+height: 100%;
+width: 100%;
+z-index: 1000;
+display: none;
+}
+
+.hidden{
+	display: none;
+}
+
+.modalBox{
+	left:50%;
+	top:50%;
+	position: absolute;
+	box-shadow: 1px 1px 6px #000;
+	-webkit-box-shadow: 1px 1px 6px #000;
+	background-color: #eaeaea;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;  
+}
+
+.modalBoxInner{
+	overflow-y:auto;
+}
+
+
+.close{
+	position: absolute;
+	top: -17px;
+	right: -14px;
+	display: block;
+	height: 30px;
+	width: 30px;
+	background: #000;
+	text-align: center;
+	line-height: 30px;
+	text-decoration: none;
+	color: #fff;
+	border: 1px solid #fff;
+	font-size: 14px;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 12px; 
+}

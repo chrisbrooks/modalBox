@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Jquery modalBox Plugin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--dynamic popup link-->
+<a href="#" class="modalBoxOne">Default dynamic popup</a>
+
+<!--dynamic popup link-->
+<a href="#" class="modalBoxTwo">Custom dynamic popup</a>
+
+<!--static popup link for modalBoxThree-->
+<a href="#" class="modalBoxThree">Static popup</a>
+
+<!--static popup content for modalBoxThree with hidden style-->
+<p id="modalBoxThree" class="hidden">This is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hidden</p>
+
+
+<!--jquery library-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+
+<!--popup script-->
+<script src="jquery.modalBox.js"></script>
+
+<script>
+$(document).ready(function(){
+	//dynamic popup with default options
+	$('.modalBoxOne').modalBox();
+
+	//dynamic popup with custom options
+	$('.modalBoxTwo').modalBox({
+		title:'Second Title Box',
+		description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra malesuada neque, id molestie lorem scelerisque ut. Quisque luctus scelerisque leo. Nullam imperdiet sollicitudin nisl non commodo. Quisque vel rhoncus nisi, sit amet iaculis ligula. Aliquam eu malesuada nulla, sed vestibulum lacus. Proin ultrices lacinia tempus. Vivamus arcu purus, semper bibendum risus molestie, luctus interdum velit. Nulla mattis, risus a ultricies iaculis, est libero tempus tortor, nec suscipit lacus nulla in enim.Vivamus consequat eget purus at adipiscing. Nullam feugiat massa quis gravida vulputate. Ut a dui ac dui aliquam ultricies. Morbi ultrices urna et egestas venenatis. Etiam lobortis, est ac elementum varius, mi est vulputate diam, et tincidunt odio quam vel tellus. Nullam ultrices posuere massa, eget lacinia dolor accumsan vitae. Donec sed enim vel ipsum dictum imperdiet et vitae turpis.',
+	});
+
+	//static modal box
+	$('.modalBoxThree').modalBox({
+		staticPopup: true
+	});
+});
+</script>
+
+</body>
+</html>
