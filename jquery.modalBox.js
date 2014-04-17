@@ -10,8 +10,6 @@
     // Defining our jQuery plugin
     $.fn.modalBox = function(options) {
 
-        var clickable = $(this);
-
         // Default parameters
         var settings = $.extend({
             height: "80",
@@ -21,23 +19,6 @@
             description: "Example of how to create a modal box.",
             staticPopup: false
         }, options);
-
-        //Click event on element
-        return clickable.click(function() {
-            if(settings.staticPopup === false){
-                openPopup();
-                add_styles();
-                closeModal();
-                $('.modalBoxDynamic').fadeIn(200);
-            }else{
-                if(!$('.modalBoxStatic').hasClass('opened')){
-                     popupStaticBase();
-                }
-                openPopupStatic();
-                add_styles();
-                closeModal();
-            }  
-        });
 
         //Open popup dynamic
         function openPopup() {
@@ -52,10 +33,11 @@
         }
 
         //Open popup static
-        function openPopupStatic() {
+        function openPopupStatic(clickable) {
             var targetSelector = '#' + clickable.attr('class');
             $(targetSelector).appendTo('.modalBoxInner'); 
             $(targetSelector).removeClass('hidden').closest('.modalBoxStatic').addClass('opened').fadeIn(200);
+            console.log($(this))        
         }
 
         //close modal popup
@@ -85,6 +67,25 @@
             });
                 
         }
+        //Click event on element
+        return this.click(function() {
+            var clickable= $(this);
+            if(settings.staticPopup === false){
+                openPopup();
+                add_styles();
+                closeModal();
+                $('.modalBoxDynamic').fadeIn(200);
+            }else{
+                if(!$('.modalBoxStatic').hasClass('opened')){
+                     popupStaticBase();
+                }
+                openPopupStatic(clickable);
+                add_styles();
+                closeModal();
+                console.log($(this))
+            }  
+        });
+
         return this;
     };
 })(jQuery);
