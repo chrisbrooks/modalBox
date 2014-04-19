@@ -63,8 +63,10 @@
             });
 
             $('.modalBoxInner').css({
-                'height': settings.height + "%" - settings.padding*2 
+                'height': '100%'
             });
+
+            console.log(settings.height - settings.padding*2 + "%")
                 
         }
         //Click event on element
@@ -82,7 +84,6 @@
                 openPopupStatic(clickable);
                 add_styles();
                 closeModal();
-                console.log($(this))
             }  
         });
 
