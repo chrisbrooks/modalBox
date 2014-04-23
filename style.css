@@ -40,7 +40,7 @@ time, mark, audio, video {
 }
 
 .modalBoxDynamic, .modalBoxStatic{
-position: absolute;
+position: fixed;
 top: 0px;
 left: 0px;
 background-color: rgba(0, 0, 0, 0.8);
@@ -52,6 +52,10 @@ display: none;
 
 .hidden{
 	display: none;
+}
+
+.noScroll{
+		overflow: hidden;
 }
 
 .modalBox{

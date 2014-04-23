@@ -24,12 +24,14 @@
         function openPopup() {
             var popupOption = $('<div class="modalBoxDynamic"><div class="modalBox"><a href="#" class="close">X</a><div class="modalBoxInner"><h2>' + settings.title + '</h2><p>' + settings.description + '</p></div></div></div>');
             $(popupOption).appendTo('body');   
+            $('body').addClass('noScroll');
         }
 
         //Open popup static base
         function popupStaticBase() {
             var popupOption = $('<div class="modalBoxStatic"><div class="modalBox"><a href="#" class="close">X</a><div class="modalBoxInner"></div></div></div>');
              $(popupOption).appendTo('body'); 
+             $('body').addClass('noScroll');
         }
 
         //Open popup static
@@ -37,18 +39,20 @@
             var targetSelector = '#' + clickable.attr('class');
             $(targetSelector).appendTo('.modalBoxInner'); 
             $(targetSelector).removeClass('hidden').closest('.modalBoxStatic').addClass('opened').fadeIn(200);
-            console.log($(this))        
+            $('body').addClass('noScroll');        
         }
 
         //close modal popup
         function closeModal() {
             $('.close, .modalBoxStatic, .modalBoxDynamic').click(function() {
                 $('.modalBoxDynamic, .modalBoxStatic').fadeOut(200);
+                $('body').removeClass('noScroll');
                 if(settings.staticPopup === false){
                     setTimeout(function() {
                         $('.modalBoxDynamic').remove();
                     }, 200);
                 }
+                return false;
             });
         }
 
@@ -84,9 +88,9 @@
                 openPopupStatic(clickable);
                 add_styles();
                 closeModal();
-            }  
+            }
+            return false;  
         });
 
-        return this;
     };
 })(jQuery);
