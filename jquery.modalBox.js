@@ -1,96 +1,65 @@
-/*
- * Jquery modalBox Plugin
- * 
- * Author: Chris Brooks
- * URL: http://www.chris-brooks.co.uk
- * 
- */
-(function($) {
+(function ($) {
     "use strict";
-    // Defining our jQuery plugin
-    $.fn.modalBox = function(options) {
-
+    $.fn.modalBox = function( options ) {
+       
         // Default parameters
         var settings = $.extend({
-            height: "80",
-            width: "80",
-            padding: "10",
-            title: "JQuery Modal Box Demo",
-            description: "Example of how to create a modal box.",
-            staticPopup: false
-        }, options);
+            width: 600,
+            height: 400, 
+            padding: 20,
+            percentages: false
+        }, options );
 
-        //Open popup dynamic
-        function openPopup() {
-            var popupOption = $('<div class="modalBoxDynamic"><div class="modalBox"><a href="#" class="close">X</a><div class="modalBoxInner"><h2>' + settings.title + '</h2><p>' + settings.description + '</p></div></div></div>');
-            $(popupOption).appendTo('body');   
-            $('body').addClass('noScroll');
-        }
+        return this.each(function(){
+            // Get specific DOM elements
+            var openButton = $(this),
+            targetSelector = '#' + openButton.attr('data-target'),
+            closeButtons = '.modal-close, .overlay';
 
-        //Open popup static base
-        function popupStaticBase() {
-            var popupOption = $('<div class="modalBoxStatic"><div class="modalBox"><a href="#" class="close">X</a><div class="modalBoxInner"></div></div></div>');
-             $(popupOption).appendTo('body'); 
-             $('body').addClass('noScroll');
-        }
+            // Show the relevant modal window on clicking the open button
+            openButton.on('click touchstart',function(){
 
-        //Open popup static
-        function openPopupStatic(clickable) {
-            var targetSelector = '#' + clickable.attr('class');
-            $(targetSelector).appendTo('.modalBoxInner'); 
-            $(targetSelector).removeClass('hidden').closest('.modalBoxStatic').addClass('opened').fadeIn(200);
-            $('body').addClass('noScroll');        
-        }
+                var targetSelector = '#' + $(this).attr('data-target');
+                $(targetSelector + ', .overlay').fadeIn('fast');
 
-        //close modal popup
-        function closeModal() {
-            $('.close, .modalBoxStatic, .modalBoxDynamic').click(function() {
-                $('.modalBoxDynamic, .modalBoxStatic').fadeOut(200);
-                $('body').removeClass('noScroll');
-                if(settings.staticPopup === false){
-                    setTimeout(function() {
-                        $('.modalBoxDynamic').remove();
-                    }, 200);
+                //stop scrolling background on mobile
+                $('.overlay').bind('touchmove', function(e){
+                    e.preventDefault();
+                });
+
+                $('body,html').css('overflow','hidden');
+
+                if(settings.percentages === true){
+                    $(targetSelector).css({
+                        'height': settings.height + '%',
+                        'width': settings.width + '%',  
+                        'padding': settings.padding,  
+                        'margin-left': 0,
+                        'top': 50 - settings.height /2 + '%',
+                        'left': (100 - settings.width) / 2 + '%',
+                        'margin-top': 0
+                        
+                    });   
+                }else{
+                    $(targetSelector).css({
+                        'height': settings.height,
+                        'width': settings.width,  
+                        'margin-left': -settings.width / 2,
+                        'margin-top': -settings.height / 2,
+                        'padding': settings.padding, 
+                        'top':50 + '%',
+                        'left':50 + '%'
+                    });   
                 }
+                 return false;  
+            });
+
+            $(closeButtons).on('click',function(){
+                $(targetSelector + ', .overlay').fadeOut('fast');
+                $('body,html').css('overflow','auto');
+                $('.overlay').unbind('touchmove');
                 return false;
             });
-        }
-
-        //Adding css styles
-        function add_styles() {
-            $('.modalBox').css({
-                'height': settings.height + '%',
-                'width': settings.width + '%',  
-                'padding': settings.padding,  
-                'margin-left': -settings.width / 2 + '%',
-                'top': 50 - settings.height /2 + '%'
-            });
-
-            $('.modalBoxInner').css({
-                'height': '100%'
-            });
-
-            console.log(settings.height - settings.padding*2 + "%")
-                
-        }
-        //Click event on element
-        return this.click(function() {
-            var clickable= $(this);
-            if(settings.staticPopup === false){
-                openPopup();
-                add_styles();
-                closeModal();
-                $('.modalBoxDynamic').fadeIn(200);
-            }else{
-                if(!$('.modalBoxStatic').hasClass('opened')){
-                     popupStaticBase();
-                }
-                openPopupStatic(clickable);
-                add_styles();
-                closeModal();
-            }
-            return false;  
         });
-
     };
-})(jQuery);
+}( jQuery ));

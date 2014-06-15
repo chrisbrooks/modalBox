@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="robots" content="noindex, nofollow">
-<title>Jquery modalBox Plugin</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="jquery.modalBox.js"></script>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<p>Integer euismod urna purus, sit amet semper tellus vulputate vel. Nam tempus fermentum ligula, sed dictum libero accumsan ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer vehicula dui eu ipsum sodales fermentum. Maecenas viverra accumsan consequat. Sed sed ligula sed metus imperdiet congue eu sed mi. Suspendisse ac augue rutrum, interdum dolor a, viverra ligula. Sed rhoncus, mauris vitae faucibus scelerisque, ipsum nisi adipiscing turpis, id viverra augue nulla sit amet libero. In vitae nunc mauris. Morbi ac adipiscing purus. Duis id pulvinar urna, sit amet dictum nunc. Fusce malesuada, ligula ut sodales lacinia, dolor lorem vehicula nunc, eget facilisis felis massa sit amet nibh. Fusce at tortor et leo malesuada facilisis. Nulla facilisi.Integer euismod urna purus, sit amet semper tellus vulputate vel. Nam tempus fermentum ligula, sed dictum libero accumsan ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer vehicula dui eu ipsum sodales fermentum. Maecenas viverra accumsan consequat. Sed sed ligula sed metus imperdiet congue eu sed mi. Suspendisse ac augue rutrum, interdum dolor a, viverra ligula. Sed rhoncus, mauris vitae faucibus scelerisque, ipsum nisi adipiscing turpis, id viverra augue nulla sit amet libero. In vitae nunc mauris. Morbi ac adipiscing purus. Duis id pulvinar urna, sit amet dictum nunc. Fusce malesuada, ligula ut sodales lacinia, dolor lorem vehicula nunc, eget facilisis felis massa sit amet nibh. Fusce at tortor et leo malesuada facilisis. Nulla facilisi.Integer euismod urna purus, sit amet semper tellus vulputate vel. Nam tempus fermentum ligula, sed dictum libero accumsan ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer vehicula dui eu ipsum sodales fermentum. Maecenas viverra accumsan consequat. Sed sed ligula sed metus imperdiet congue eu sed mi. Suspendisse ac augue rutrum, interdum dolor a, viverra ligula. Sed rhoncus, mauris vitae faucibus scelerisque, ipsum nisi adipiscing turpis, id viverra augue nulla sit amet libero. In vitae nunc mauris. Morbi ac adipiscing purus. Duis id pulvinar urna, sit amet dictum nunc. Fusce malesuada, ligula ut sodales lacinia, dolor lorem vehicula nunc, eget facilisis felis massa sit amet nibh. Fusce at tortor et leo malesuada facilisis. Nulla facilisi.Integer euismod urna purus, sit amet semper tellus vulputate vel. Nam tempus fermentum ligula, sed dictum libero accumsan ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer vehicula dui eu ipsum sodales fermentum. Maecenas viverra accumsan consequat. Sed sed ligula sed metus imperdiet congue eu sed mi. Suspendisse ac augue rutrum, interdum dolor a, viverra ligula. Sed rhoncus, mauris vitae faucibus scelerisque, ipsum nisi adipiscing turpis, id viverra augue nulla sit amet libero. In vitae nunc mauris. Morbi ac adipiscing purus. Duis id pulvinar urna, sit amet dictum nunc. Fusce malesuada, ligula ut sodales lacinia, dolor lorem vehicula nunc, eget facilisis felis massa sit amet nibh. Fusce at tortor et leo malesuada facilisis. Nulla facilisi.Integer euismod urna purus, sit amet semper tellus vulputate vel. Nam tempus fermentum ligula, sed dictum libero accumsan ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer vehicula dui eu ipsum sodales fermentum. Maecenas viverra accumsan consequat. Sed sed ligula sed metus imperdiet congue eu sed mi. Suspendisse ac augue rutrum, interdum dolor a, viverra ligula. Sed rhoncus, mauris vitae faucibus scelerisque, ipsum nisi adipiscing turpis, id viverra</p>
 
-<!--dynamic popup link-->
-<a href="#" class="modalBoxOne">Default dynamic popup</a>
+	<div class="modal-open" data-target="modalbox1">Popup 1</div>
+	<div class="modal-open2" data-target="modalbox2">try it out</div>				
+	
+	<div id="modalbox1" class="overlay-message hide">
+		<a href="#" class="modal-close">X</a>
+		<div class="overlay-message-inner">
+			<h2>This is modal 1</h2>
+			Integer euismod urna purus, sit amet semper tellus vulputate vel. Nam tempus fermentum ligula, sed dictum libero accumsan ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer vehicula dui eu ipsum sodales fermentum. Maecenas viverra accumsan consequat. Sed sed ligula sed metus imperdiet congue eu sed mi. Suspendisse ac augue rutrum, interdum dolor a, viverra ligula. Sed rhoncus, mauris vitae faucibus scelerisque, ipsum nisi adipiscing turpis, id viverra augue nulla sit amet libero. In vitae nunc mauris. Morbi ac adipiscing purus. Duis id pulvinar urna, sit amet dictum nunc. Fusce malesuada, ligula ut sodales lacinia, dolor lorem vehicula nunc, eget facilisis felis massa sit amet nibh. Fusce at tortor et leo malesuada facilisis. Nulla facilisi.
+		</div>
+	</div>
 
-<!--dynamic popup link-->
-<a href="#" class="modalBoxTwo">Custom dynamic popup</a>
+	<div id="modalbox2" class="overlay-message hide">
+		<a href="#" class="modal-close">X</a>
+		<div class="overlay-message-inner">
+			<h2>This is modal 2</h2>
+			Integer euismod urna purus, sit amet semper tellus vulputate vel. Nam tempus fermentum ligula, sed dictum libero accumsan ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer vehicula dui eu ipsum sodales fermentum. Maecenas viverra accumsan consequat. Sed sed ligula sed metus imperdiet congue eu sed mi. Suspendisse ac augue rutrum, interdum dolor a, viverra ligula. Sed rhoncus, mauris vitae faucibus scelerisque, ipsum nisi adipiscing turpis, id viverra augue nulla sit amet libero. In vitae nunc mauris. Morbi ac adipiscing purus. Duis id pulvinar urna, sit amet dictum nunc. Fusce malesuada, ligula ut sodales lacinia, dolor lorem vehicula nunc, eget facilisis felis massa sit amet nibh. Fusce at tortor et leo malesuada facilisis. Nulla facilisi.
+		</div>
+	</div>
 
-<!--static popup link for modalBoxThree-->
-<a href="#" class="modalBoxThree">Static popup</a>
+	<div class="overlay hide"></div>
 
-<!--static popup content for modalBoxThree with hidden style-->
-<p id="modalBoxThree" class="hidden">This is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hiddenThis is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hiddenThis is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hiddenThis is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hiddenThis is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hiddenThis is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hiddenThis is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hiddenThis is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hiddenThis is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hiddenThis is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hiddenThis is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hiddenThis is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hiddenThis is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hiddenThis is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hiddenThis is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hiddenThis is a static popup with whatever content you would like inside. Just add the ID which matches the call for the plugin in document ready and add the class hidden</p>
-
-
-<!--jquery library-->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-
-<!--popup script-->
-<script src="jquery.modalBox.js"></script>
-
-<script>
-$(document).ready(function(){
-	//dynamic popup with default options
-	$('.modalBoxOne').modalBox();
-
-	//dynamic popup with custom options
-	$('.modalBoxTwo').modalBox({
-		title:'Second Title Box',
-		description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra malesuada neque, id molestie lorem scelerisque ut. Quisque luctus scelerisque leo. Nullam imperdiet sollicitudin nisl non commodo. Quisque vel rhoncus nisi, sit amet iaculis ligula. Aliquam eu malesuada nulla, sed vestibulum lacus. Proin ultrices lacinia tempus. Vivamus arcu purus, semper bibendum risus molestie, luctus interdum velit. Nulla mattis, risus a ultricies iaculis, est libero tempus tortor, nec suscipit lacus nulla in enim.Vivamus consequat eget purus at adipiscing. Nullam feugiat massa quis gravida vulputate. Ut a dui ac dui aliquam ultricies. Morbi ultrices urna et egestas venenatis. Etiam lobortis, est ac elementum varius, mi est vulputate diam, et tincidunt odio quam vel tellus. Nullam ultrices posuere massa, eget lacinia dolor accumsan vitae. Donec sed enim vel ipsum dictum imperdiet et vitae turpis.',
+	<script>
+	$( document ).ready(function() {
+		$('.modal-open').modalBox({
+			width: 90,
+			height:90,
+			padding:20,
+			percentages: true
+		});
+		$('.modal-open2').modalBox({
+			width: 600,
+			height:400,
+			padding:20,
+			percentages: false
+		});
 	});
-
-	//static modal box
-	$('.modalBoxThree').modalBox({
-		staticPopup: true
-	});
-});
-</script>
+	</script>
 
 </body>
 </html>
